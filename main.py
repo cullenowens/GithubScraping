@@ -24,4 +24,16 @@ def create_webdriver():
 browser = create_webdriver()
 browser.get("https://github.com/collections/machine-learning")
 
+projects = browser.find_elements_by_xpath("//h1[@class='h3 lh-condensed']") #extract all the projects in the website
+
+project_list = {} #list to hold each projects information
+for proj in projects:
+    proj_name = proj.text #name of proj
+    proj_url = proj.find_elements_by_xpath("a")[0].get_attribute("href") #url of proj
+    project_list[proj_name] = proj_url
+    #explore the opportunities of looking through these links
+
 input("Press Enter to close the browser...") #keep the browser open until user input
+
+browser.quit() #close the browser when done
+print(project_list) #print the list of projects
