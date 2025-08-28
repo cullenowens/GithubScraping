@@ -16,8 +16,8 @@ driver_option.add_argument(" - incognito") #open in incognito mode
 chromedriver_path = '/Users/cullenowens/Desktop/WebScraping/chromedriver-mac-x64/chromedriver' #path to chromedriver
 
 def create_webdriver():
-    service = Service(chromedriver_path)
-    return webdriver.Chrome(service, options=driver_option)
+    service = Service(executable_path=chromedriver_path)
+    return webdriver.Chrome(service=service, options=driver_option)
 
 #open the website
 browser = create_webdriver()
