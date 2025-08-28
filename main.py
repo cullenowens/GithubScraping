@@ -14,10 +14,10 @@ driver_option = webdriver.ChromeOptions()
 driver_option.add_argument(" - incognito") #open in incognito mode
 #can use "--headless" to run in background (no visible window), better w autometion, but some sites detect headless
 chromedriver_path = '/Users/cullenowens/Desktop/WebScraping/chromedriver-mac-x64/chromedriver' #path to chromedriver
-service = Service(chromedriver_path)
 
 def create_webdriver():
-    return webdriver.Chrome(service, chrome_options=driver_option)
+    service = Service(chromedriver_path)
+    return webdriver.Chrome(service, options=driver_option)
 
 #open the website
 browser = create_webdriver()
