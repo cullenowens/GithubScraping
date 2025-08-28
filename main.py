@@ -15,3 +15,7 @@ chromedriver_path = '/Users/cullenowens/Desktop/WebScraping/chromedriver-mac-x64
 
 def create_webdriver():
     return webdriver.Chrome(executable_path=chromedriver_path, chrome_options=driver_option)
+
+#open the website
+browser = create_webdriver()
+browser.get("https://github.com/collections/machine-learning")
