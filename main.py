@@ -23,3 +23,5 @@ def create_webdriver():
 #open the website
 browser = create_webdriver()
 browser.get("https://github.com/collections/machine-learning")
+
+input("Press Enter to close the browser...") #keep the browser open until user input
