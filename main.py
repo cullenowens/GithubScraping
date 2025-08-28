@@ -13,6 +13,9 @@ from selenium.webdriver.chrome.service import Service #manage chromedriver servi
 driver_option = webdriver.ChromeOptions()
 driver_option.add_argument(" - incognito") #open in incognito mode
 #can use "--headless" to run in background (no visible window), better w autometion, but some sites detect headless
+driver_option.add_argument(
+    "user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 13_5 AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0 Safari/537.36)"
+)
 chromedriver_path = '/Users/cullenowens/Desktop/WebScraping/chromedriver-mac-x64/chromedriver' #path to chromedriver
 
 def create_webdriver():
