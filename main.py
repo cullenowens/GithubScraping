@@ -1,1 +1,17 @@
-from selenium import webdriver
+#make sure to check if using interpreter and running selenium
+#python3 -m pip show selenium
+#which python3
+
+from selenium import webdriver #allows the browser to launch
+from selenium.webdriver.common.by import By #allows search with params
+from selenium.webdriver.support.ui import WebDriverWait #allows waiting for info to load
+from selenium.webdriver.support import expected_conditions as EC #determine whether page has loaded
+from selenium.common.exceptions import TimeoutException #handle timeout exception
+
+driver_option = webdriver.ChromeOptions()
+driver_option.add_argument(" - incognito") #open in incognito mode
+#can use "--headless" to run in background (no visible window), better w autometion, but some sites detect headless
+chromedriver_path = '/Users/cullenowens/Desktop/WebScraping/chromedriver-mac-x64/chromedriver' #path to chromedriver
+
+def create_webdriver():
+    return webdriver.Chrome(executable_path=chromedriver_path, chrome_options=driver_option)
