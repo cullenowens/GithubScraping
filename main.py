@@ -37,5 +37,7 @@ input("Press Enter to close the browser...") #keep the browser open until user i
 
 browser.quit() #close the browser when done
 
+project_df = pd.DataFrame.from_dict(project_list, orient = 'index') #onverts the dictionary to a dataframe
+
 for key, value in project_list.items(): #print out the projects found
     print(f"Project Name: {key}\nProject URL: {value}\n")
