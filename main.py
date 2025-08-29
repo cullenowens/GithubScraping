@@ -36,4 +36,6 @@ for proj in projects:
 input("Press Enter to close the browser...") #keep the browser open until user input
 
 browser.quit() #close the browser when done
-print(project_list) #print the list of projects
+
+for key, value in project_list.items(): #print out the projects found
+    print(f"Project Name: {key}\nProject URL: {value}\n")
