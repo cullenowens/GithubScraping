@@ -42,4 +42,4 @@ project_df = pd.DataFrame.from_dict(project_list, orient = 'index') #onverts the
 project_df['progject_name'] = project_df.index #add the project name as a column
 project_df.columns = ['project_url', 'project_name'] #rename the columns
 project_df = project_df.reset_index(drop=True) #reset the index
-print(project_df) #print the dataframe
+project_df.to_csv('github_ml_project_list.csv') #save the dataframe to a csv file
