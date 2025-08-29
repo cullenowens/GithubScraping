@@ -8,7 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait #allows waiting for info
 from selenium.webdriver.support import expected_conditions as EC #determine whether page has loaded
 from selenium.common.exceptions import TimeoutException #handle timeout exception
 from selenium.webdriver.chrome.service import Service #manage chromedriver service
-import pandas #for saving data data to pandas library
+import pandas as pd #for saving data data to pandas library
 
 
 driver_option = webdriver.ChromeOptions()
@@ -38,7 +38,7 @@ input("Press Enter to close the browser...") #keep the browser open until user i
 
 browser.quit() #close the browser when done
 
-project_df = pandas.DataFrame.from_dict(project_list, orient = 'index') #onverts the dictionary to a dataframe
+project_df = pd.DataFrame.from_dict(project_list, orient = 'index') #onverts the dictionary to a dataframe
 
 for key, value in project_list.items(): #print out the projects found
     print(f"Project Name: {key}\nProject URL: {value}\n")
