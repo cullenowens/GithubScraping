@@ -39,5 +39,7 @@ input("Press Enter to close the browser...") #keep the browser open until user i
 browser.quit() #close the browser when done
 
 project_df = pd.DataFrame.from_dict(project_list, orient = 'index') #onverts the dictionary to a dataframe
-
+project_df['progject_name'] = project_df.index #add the project name as a column
+project_df.columns = ['project_url', 'project_name'] #rename the columns
+project_df = project_df.reset_index(drop=True) #reset the index
 print(project_df) #print the dataframe
